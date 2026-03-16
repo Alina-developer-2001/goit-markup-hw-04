@@ -36,7 +36,7 @@ button {
 }
 
 /* Header */
-.header-section {
+header {
   box-shadow:
     0 1px 6px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16),
@@ -107,18 +107,6 @@ button {
 .navigation-list-link:not(.current):hover,
 .navigation-list-link:not(.current):focus {
   color: #404bbf;
-}
-
-.navigation-list-link:not(.current):hover::after,
-.navigation-list-link:not(.current):focus::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
-  background-color: #404bbf;
-  border-radius: 2px;
 }
 
 /* Address */
@@ -255,8 +243,7 @@ button {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   flex-basis: calc((100% - 72px) / 4);
-  padding-top: 24px;
-  padding-bottom: 24px;
+  height: 112px;
 }
 
 .address-list-item-title {
@@ -434,7 +421,10 @@ button {
 }
 .portfolio-list-item:hover,
 .portfolio-list-item:focus {
-  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
 .app-name {
@@ -488,7 +478,7 @@ button {
   display: flex;
   max-width: 1158px;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: baseline;
   margin: 0 auto;
   padding: 100px 15px;
   gap: 120px;
@@ -498,14 +488,14 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 16px;
 }
 .footer .container2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 16px;
 }
 
