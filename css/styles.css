@@ -36,6 +36,13 @@ button {
 }
 
 /* Header */
+.header-section {
+  box-shadow:
+    0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 2px 1px 0 rgba(46, 47, 66, 0.08);
+}
+
 .header-section .container {
   display: flex;
   max-width: 1158px;
@@ -72,41 +79,45 @@ button {
 }
 
 .navigation-list-link {
-  position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #2e2f42;
+  color: #2e2f42; /* базовий колір */
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.navigation-list-link:hover,
-.navigation-list-link:focus {
+/* Поточна сторінка */
+.navigation-list-link.current {
+  color: #404bbf; /* постійний колір */
+}
+
+.navigation-list-link.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* прив’язка до низу */
+  width: 100%;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+}
+
+/* Hover для інших посилань */
+.navigation-list-link:not(.current):hover,
+.navigation-list-link:not(.current):focus {
   color: #404bbf;
 }
 
-.navigation-list-link::after {
-  position: absolute;
+.navigation-list-link:not(.current):hover::after,
+.navigation-list-link:not(.current):focus::after {
   content: "";
-  right: 0;
-  top: 42px;
-  height: 4px;
-  width: 100%;
-  background-color: #404bbf;
-  border-radius: 2px;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-}
-
-.navigation-list-link:active::after {
-  opacity: 1;
   position: absolute;
-  content: "";
-  right: 0;
-  top: 42px;
-  height: 4px;
+  left: 0;
+  bottom: -1px;
   width: 100%;
+  height: 4px;
   background-color: #404bbf;
   border-radius: 2px;
 }
@@ -134,6 +145,7 @@ button {
 /* Hero section */
 .hero-section {
   background-color: #2e2f42;
+  max-width: 1440px;
   padding: 188px 0;
   background-image:
     linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -143,6 +155,7 @@ button {
   background-position: center;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
 }
 
 .hero-section .container {
@@ -222,7 +235,7 @@ button {
   flex-direction: column;
   align-content: center;
   gap: 8px;
-  flex-basis: calc((100%-72px) / 3);
+  flex-basis: calc((100% - 72px) / 4);
 }
 
 .advantages-container {
