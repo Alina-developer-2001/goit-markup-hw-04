@@ -140,8 +140,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   margin: 0 auto;
 }
 
@@ -269,6 +267,7 @@ header {
 .team-section .container {
   max-width: 1158px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .team-list {
